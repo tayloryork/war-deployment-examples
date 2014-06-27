@@ -1,0 +1,20 @@
+<project name="test" default="rpm" xmlns:redline="antlib:org.redline_rpm" xmlns:ac="antlib:net.sf.antcontrib">
+
+	<target name="rpm">
+		<ac:propertyregex 
+			property="rpm.version" input="${project.version}" regexp="([A-Za-z0-9\.]+)-([A-Za-z0-9\.]+)"
+			select="\1" />
+		<ac:propertyregex 
+			property="rpm.release" input="${project.version}" regexp="([A-Za-z0-9\.]+)-([A-Za-z0-9\.]+)"
+			select="\2" />
+
+		<mkdir dir="target" />
+		<redline:rpm group="${project.groupId}" name="${project.artifactId}"
+			version="${rpm.version}" destination="target" release="${rpm.release}">
+			<zipfileset prefix="${rpm.install.directory}"
+				file="${project.artifactId}-${project.version}.war" />
+			<!-- <depends name="apache-tomcat7" version="1.2.3" /> -->
+		</redline:rpm>
+	</target>
+
+</project>

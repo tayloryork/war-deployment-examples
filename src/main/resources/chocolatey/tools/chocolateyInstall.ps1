@@ -1,0 +1,1 @@
+Install-ChocolateyPackage '${artifactId}' 'http://repo01.dev.e2open.com:8080/archiva/repository/e2open.dev/com/e2open/e2ui/framework/1.9/framework-1.9.zip' "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"

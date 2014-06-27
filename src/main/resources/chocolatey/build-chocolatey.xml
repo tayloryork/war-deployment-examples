@@ -1,0 +1,7 @@
+<project name="chocolatey" default="chocolatey">
+	<target name="chocolatey">
+		<exec executable="C:\Chocolatey\bin\cpack.bat" dir="target">
+			<arg value="classes\chocolatey\taylorsapp.nuspec"/>
+		</exec>
+	</target>
+</project>
