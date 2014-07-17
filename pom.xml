@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.e2open</groupId>
-	<artifactId>taylorsapp</artifactId>
+	<artifactId>war-deployment-examples</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>taylorsapp Maven Webapp</name>
+	<name>war-deployment-examples Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<rpm.file.owner>eoadmin</rpm.file.owner>
@@ -27,7 +27,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>taylorsapp</finalName>
+		<finalName>war-deployment-examples</finalName>
 		<plugins>
 			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>rpm-maven-plugin</artifactId> 
 				<version>2.1-alpha-4</version> <extensions>true</extensions> <executions> 
