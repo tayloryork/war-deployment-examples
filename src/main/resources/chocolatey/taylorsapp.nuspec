@@ -13,5 +13,8 @@
     <licenseUrl>http://www.myapp.tld/license.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance> <!-- or true if you require the user to accept the License before installing -->
     <iconUrl>http://www.myapp.tld/logo.png</iconUrl>
+    <dependencies>
+        <dependency id="Tomcat"/>
+    </dependencies>
   </metadata>
 </package>
