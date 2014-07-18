@@ -1,14 +1,13 @@
 try {
-	Write-ChocolateySuccess 'MyPackage!!!!!!!!!!'
-	$version = "1.9"
+	$version = "${version}"
+	$appName = "${artifactId}"
 	$scriptPath = (Split-Path -parent $MyInvocation.MyCommand.Definition)
-	$savePath = "$scriptPath\framework-$version.zip"
-	$appName = "taylorsApp"
-	Write-Debug "SavePath: $savePath"
+	$warPath = "$scriptPath\$appName-$version.war"
+	Write-Debug "WarPath: $warPath"
 	
-	Get-ChocolateyWebFile $appName $savePath "http://repo01.dev.e2open.com:8080/archiva/repository/e2open.dev/com/e2open/e2ui/framework/$version/framework-$version.zip"
-    
+
+    Write-ChocolateySuccess 'War Deployment Examples Installed!!!!!!!!!!'
 } catch {
-  Write-ChocolateyFailure $appName $($_.Exception.Message)
-  throw
+	Write-ChocolateyFailure $appName $($_.Exception.Message)
+	throw
 }

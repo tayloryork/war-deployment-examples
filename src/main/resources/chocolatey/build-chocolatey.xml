@@ -1,7 +1,8 @@
 <project name="chocolatey" default="chocolatey">
 	<target name="chocolatey">
-		<exec executable="C:\Chocolatey\bin\cpack.bat" dir="target">
-			<arg value="classes\chocolatey\taylorsapp.nuspec"/>
+		<copy file="target\${artifactId}.war" todir="target\classes\chocolatey" />
+		<exec executable="C:\Chocolatey\bin\cpack.exe" dir="target">
+			<arg value="classes\chocolatey\${artifactId}.nuspec"/>
 		</exec>
 	</target>
 </project>

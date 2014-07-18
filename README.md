@@ -24,3 +24,11 @@ To create packages, run: `mvn install` This will run mvn compile, mvn test, mvn 
 2. Uninstall files
 3. Done
 
+## Testing
+While in the folder with .nupkgfile :
+`cinst war-deployment-examples -pre -source %cd% -force -debug`
+
+`-pre` allows filenames similar to "war-deployment-examples.0.0.1-SNAPSHOT.nupkg". This is needed because -SNAPSHOT is a 'pre-release' in choco land.
+`-source %cd%` specifies that the source DIRECTORY is the current directory. Source does NOT point to a file.
+`-force` will install the package even if it is already installed.
+`-debug` will display debug output
