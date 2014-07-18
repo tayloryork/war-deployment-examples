@@ -32,3 +32,17 @@ While in the folder with .nupkgfile :
 `-source %cd%` specifies that the source DIRECTORY is the current directory. Source does NOT point to a file.
 `-force` will install the package even if it is already installed.
 `-debug` will display debug output
+
+## TODO
+- [ ] RPM
+-  [x] Create Package
+-  [ ] Depend on Tomcat
+-  [ ] Deploy War into Tomcat
+-  [ ] Create Uninstall
+- [ ] Chocolatey
+ - [x] Create Package
+ - [x] Depend on Tomcat
+ - [ ] Deploy War into Tomcat
+  - [ ] Create user in Manager
+ - [ ] Create Uninstall
+ 
