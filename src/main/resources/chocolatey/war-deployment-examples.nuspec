@@ -14,7 +14,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance> <!-- or true if you require the user to accept the License before installing -->
     <iconUrl>http://www.myapp.tld/logo.png</iconUrl>
     <dependencies>
-        <dependency id="Tomcat" version="7.0.54" />
+        <dependency id="tomcatzip" version="8.0.9" />
     </dependencies>
   </metadata>
 </package>

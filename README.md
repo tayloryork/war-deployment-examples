@@ -43,6 +43,6 @@ While in the folder with .nupkgfile :
  - [x] Create Package
  - [x] Depend on Tomcat
  - [ ] Deploy War into Tomcat
-  - [ ] Create user in Manager
+  - [ ] Create user in Manager `<user username="admin" password="admin" roles="manager-script,manager-gui" />`
  - [ ] Create Uninstall
  
