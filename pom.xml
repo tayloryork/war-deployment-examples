@@ -56,6 +56,52 @@
 				<fileEncoding>utf-8</fileEncoding> </preremoveScriptlet> </configuration> 
 				</plugin> -->
 			<plugin>
+				<groupId>com.alexecollins.docker</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>2.4.0</version>
+				<configuration>
+					<!-- docker version -->
+					<version>1.4.1</version>
+					<!-- used for push -->
+					<username>tayloryork</username>
+					<email>tayloryork@gmail.com</email>
+					<!-- if you want to push to a private repo -->
+					<serverAddress>https://index.docker.io/v1/</serverAddress>
+					<!-- change here if you are using another port/host, e.g. 4243 -->
+					<host>https://192.168.59.103:2376</host>
+					<!-- if you need to run over SSL, change this -->
+					<!-- <dockerCertPath>${user.home}/.boot2docker/certs</dockerCertPath>-->
+					<certificatePath>${user.home}/.boot2docker/certs/boot2docker-vm</certificatePath>
+					<!-- remove images created by Dockerfile -->
+					<removeIntermediateImages>true</removeIntermediateImages>
+					<!-- do/do not cache images (default true), disable to get the freshest 
+						images -->
+					<cache>true</cache>
+				</configuration>
+
+				<!-- <executions>
+					<execution>
+						<id>default-cli</id>
+						<goals>
+							<goal>help</goal>
+							<goal>clean</goal>
+							<goal>package</goal>
+							<goal>start</goal>
+							<goal>stop</goal>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>-->
+				<dependencies>
+					<dependency>
+						<!-- set-up port forwarding if you're using boot2docker --> 
+						<groupId>com.alexecollins.docker</groupId>
+						<artifactId>docker-java-orchestration-plugin-boot2docker</artifactId>
+						<version>2.4.0</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<version>1.7</version>

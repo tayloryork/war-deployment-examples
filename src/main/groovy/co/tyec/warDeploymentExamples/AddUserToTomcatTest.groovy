@@ -18,12 +18,13 @@ public class AddUserToTomcatTest {
     void testAddMangerUser() {
         def TOMCAT_USERS = '''<?xml version='1.0' encoding='cp1252'?>
             <tomcat-users>
+            <!-- some comment -->
             </tomcat-users>'''
-        def tomcatUsersRecords = new XmlParser().parseText(TOMCAT_USERS)
-        AddUserToTomcat autt = new AddUserToTomcat();
-        String outputXmlString = autt.addManagerUser(tomcatUsersRecords)
         
-        assertTrue(outputXmlString.contains("<user"), "User record was not added");
+        AddUserToTomcat autt = new AddUserToTomcat();
+        String outputXmlString = autt.addManagerUser(TOMCAT_USERS);
+        
+        assertTrue(outputXmlString.contains("<user"), "User record was not added: " + outputXmlString);
     }
     
     @Test
