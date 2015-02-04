@@ -60,17 +60,14 @@
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>2.4.0</version>
 				<configuration>
-					<!-- docker version -->
-					<version>1.4.1</version>
 					<!-- used for push -->
 					<username>tayloryork</username>
 					<email>tayloryork@gmail.com</email>
 					<!-- if you want to push to a private repo -->
 					<serverAddress>https://index.docker.io/v1/</serverAddress>
 					<!-- change here if you are using another port/host, e.g. 4243 -->
+					<!-- this needs dynamically set from boot2docker somehow -->
 					<host>https://192.168.59.103:2376</host>
-					<!-- if you need to run over SSL, change this -->
-					<!-- <dockerCertPath>${user.home}/.boot2docker/certs</dockerCertPath>-->
 					<certificatePath>${user.home}/.boot2docker/certs/boot2docker-vm</certificatePath>
 					<!-- remove images created by Dockerfile -->
 					<removeIntermediateImages>true</removeIntermediateImages>
@@ -79,7 +76,7 @@
 					<cache>true</cache>
 				</configuration>
 
-				<!-- <executions>
+				<executions>
 					<execution>
 						<id>default-cli</id>
 						<goals>
@@ -91,7 +88,7 @@
 							<goal>deploy</goal>
 						</goals>
 					</execution>
-				</executions>-->
+				</executions>
 				<dependencies>
 					<dependency>
 						<!-- set-up port forwarding if you're using boot2docker --> 

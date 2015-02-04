@@ -1,14 +1,5 @@
-FROM centos:centos6
+FROM rossbachp/apache-tomcat8:latest
 
-RUN yum -y install java-1.7.0-openjdk-devel.x86_64
+ADD ${project.build.finalName}.war /webapps/${project.build.finalName}.war
 
-ADD ${project.build.finalName}.war /
-#ADD hello-world.yml /
-ADD run.sh /
-
-RUN chmod +x run.sh
-
-CMD ["./run.sh"]
-
-EXPOSE 8080
-EXPOSE 8081
+CMD ["/opt/tomcat/bin/tomcat.sh"]
